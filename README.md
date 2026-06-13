@@ -72,13 +72,12 @@ git --version
 Copy the repository to your local device:
 
 bash
-git clone <repository-link>
+-git clone <repository-link>
 
 
 Move into the project folder:
-
 bash
-cd factcheck-video
+-cd factcheck-video
 
 
 All following commands should be executed from this main project directory unless specified otherwise.
@@ -92,7 +91,7 @@ Open the first terminal inside the project root.
 Navigate to the Python service:
 
 bash
-cd backend/python
+-cd backend/python
 
 
 ---
@@ -102,7 +101,7 @@ cd backend/python
 Create a virtual environment using Python 3.12:
 
 bash
-py -3.12 -m venv venv
+-py -3.12 -m venv venv
 
 
 Activate the virtual environment:
@@ -110,13 +109,13 @@ Activate the virtual environment:
 ### Windows
 
 bash
-venv\Scripts\activate
+-venv\Scripts\activate
 
 
 After activation, install all Python dependencies:
 
 bash
-pip install -r requirements.txt
+-pip install -r requirements.txt
 
 
 The Python environment will now contain all required NLP and AI libraries.
@@ -131,24 +130,15 @@ Inside:
 backend/python
 
 
-there is a file:
+there is a file: .env.example
 
 
-.env.example
-
-
-Create a new file:
-
-
-.env
+Create a new file: .env
 
 
 Copy the contents from .env.example into .env.
 
-Example:
-
-env
-SERPER_API_KEY=your_serper_api_key_here
+Example:env SERPER_API_KEY=your_serper_api_key_here
 
 
 ---
@@ -159,22 +149,15 @@ FactCheckVideo uses Serper.dev for Google search-based evidence retrieval.
 
 Steps:
 
-1. Visit:
-
-
-https://serper.dev
+1. Visit:https://serper.dev
 
 
 2. Create an account
 3. Generate an API key
-4. Paste the key inside:
-
-
-.env
+4. Paste the key inside:.env
 
 
 Example:
-
 env
 SERPER_API_KEY=xxxxxxxxxxxxxxxx
 
@@ -187,10 +170,7 @@ Do not upload .env files to GitHub.
 
 FactCheckVideo uses Ollama to run the local LLM responsible for generating final verification verdicts.
 
-Install Ollama:
-
-
-https://ollama.com
+Install Ollama:https://ollama.com
 
 
 ---
@@ -199,20 +179,16 @@ https://ollama.com
 
 After installing Ollama, download the required model:
 
-bash
-ollama pull llama3
+bash -ollama pull llama3
 
 
 Verify installation:
 
 bash
-ollama list
+-ollama list
 
 
-Expected output:
-
-
-llama3
+Expected output:llama3
 
 
 The Llama 3 model must be available locally before running the application.
@@ -228,21 +204,20 @@ The complete application requires *four terminals* running simultaneously.
 # Terminal 1 — Python NLP Microservice
 
 Navigate to:
-
 bash
-cd backend/python
+-cd backend/python
 
 
 Activate the virtual environment:
 
 bash
-venv\Scripts\activate
+-venv\Scripts\activate
 
 
 Start the NLP service:
 
 bash
-python nlp_service.py
+-python nlp_service.py
 
 
 This service handles all AI and NLP operations.
@@ -255,20 +230,13 @@ Open another terminal at the project root.
 
 Navigate to frontend:
 
-bash
-cd frontend
+bash-cd frontend
 
 
-Install dependencies:
-
-bash
-npm install
+Install dependencies:bash-npm install
 
 
-Start the frontend server:
-
-bash
-npm run dev
+Start the frontend server:bash-npm run dev
 
 
 The React application will start running locally.
@@ -279,32 +247,20 @@ The React application will start running locally.
 
 Open another terminal at the project root.
 
-Navigate to backend:
-
-bash
-cd backend
+Navigate to backend:bash-cd backend
 
 
-Install dependencies:
-
-bash
-npm install
+Install dependencies:bash-npm install
 
 
-Start the backend server:
-
-bash
-npm run dev
+Start the backend server:bash-npm run dev
 
 
 ---
 
 # Terminal 4 — Ollama Server
 
-Open another terminal and run:
-
-bash
-ollama serve
+Open another terminal and run:bash-ollama serve
 
 
 This starts the local LLM inference server required for generating AI verification verdicts.
@@ -411,10 +367,7 @@ Required local model:
 Llama 3
 
 
-Installed through:
-
-bash
-ollama pull llama3
+Installed through:bash-ollama pull llama3
 
 
 No external LLM API is required for verdict generation.
@@ -423,26 +376,17 @@ No external LLM API is required for verdict generation.
 
 # Environment Files
 
-The repository contains:
-
-
-.env.example
+The repository contains:.env.example
 
 
 which contains the required environment variable structure.
 
-Create:
-
-
-.env
+Create:.env
 
 
 locally and add your API keys.
 
-Example:
-
-
-SERPER_API_KEY=your_key_here
+Example:SERPER_API_KEY=your_key_here
 
 
 The .env file should never be committed.
@@ -453,16 +397,10 @@ The .env file should never be committed.
 
 ## Python virtual environment not activating
 
-Try:
-
-bash
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Try:bash-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 
-Then activate again:
-
-bash
-venv\Scripts\activate
+Then activate again:bash-venv\Scripts\activate
 
 
 ---
@@ -471,14 +409,12 @@ venv\Scripts\activate
 
 Check installed models:
 
-bash
-ollama list
+bash-ollama list
 
 
 If missing:
 
-bash
-ollama pull llama3
+bash-ollama pull llama3
 
 
 ---
@@ -489,16 +425,14 @@ Delete existing dependencies:
 
 Frontend:
 
-bash
-rm -rf node_modules
-npm install
+bash-rm -rf node_modules
+-npm install
 
 
 Backend:
 
-bash
-rm -rf node_modules
-npm install
+bash-rm -rf node_modules
+-npm install
 
 
 ---
