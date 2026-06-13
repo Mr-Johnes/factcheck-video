@@ -1,0 +1,4 @@
+.env
+Report/
+node_modules/
+venv/

@@ -1,0 +1,44 @@
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch==2.7.0
+# Web framework
+flask==3.0.3
+
+# Local Whisper transcription
+# IMPORTANT: faster-whisper requires Python 3.12 or lower.
+# ctranslate2 (its core dependency) has no wheels for Python 3.13.
+# If you are on Python 3.13, replace with: openai-whisper==20250625 + ffmpeg-python==0.2.0
+faster-whisper==1.0.3
+
+# NLP classification
+# spacy 3.8.2 and flair 0.14.0 confirmed working on Python 3.12.x
+spacy==3.8.2
+flair==0.15.1
+
+# ML backend for FLAIR and fastcoref
+torch==2.7.0
+numpy==1.26.4
+
+# Coreference resolution — Python 3.12 compatible, actively maintained
+# fastcoref resolves pronouns/vague references across the full transcript:
+#   "the riots were orchestrated" → "the January 6 Capitol riots were orchestrated"
+# Model downloads automatically on first use (~500MB for FCoref, ~1.5GB for LingMess).
+# FCoref is used by default (fast, good accuracy). Switch to LingMessCoref for better
+# accuracy at the cost of speed.
+fastcoref==2.1.6
+transformers>=4.40.0
+
+# Web search — no API key needed
+duckduckgo-search==6.2.6
+
+# Loads .env file into environment variables at startup
+# Keeps secrets (API keys) out of the codebase
+python-dotenv==1.2.1
+
+# Video downloading — YouTube, TikTok, Instagram, Twitter/X, Facebook, etc.
+yt-dlp>=2024.11.18
+
+# HTTP client (used to call Ollama)
+requests==2.32.3
+
+# Production server
+gunicorn==23.0.0
