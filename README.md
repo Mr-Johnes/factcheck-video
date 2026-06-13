@@ -32,20 +32,14 @@ FactCheckVideo consists of three major components:
 
 factcheck-video/
 
-├── frontend/
-│   └── React frontend application
-│
-├── backend/
-│   ├── Node.js backend server
-│   │
-│   └── python/
-│       ├── nlp_service.py
-│       ├── requirements.txt
-│       ├── .env.example
-│       └── Python NLP microservice
-│
+factcheck-video/
+├── frontend/        → React frontend application
+├── backend/         → Node.js backend server
+├── python/          → Python NLP microservice
+    ├── nlp_service.py
+    ├── requirements.txt
+    └── .env.example
 └── README.md
-
 
 ---
 
