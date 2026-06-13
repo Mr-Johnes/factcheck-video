@@ -72,12 +72,12 @@ git --version
 Copy the repository to your local device:
 
 ```bash
--git clone <repository-link>
+git clone <repository-link>
 ```
 
 Move into the project folder:
 ```bash
--cd factcheck-video
+cd factcheck-video
 ```
 
 All following commands should be executed from this main project directory unless specified otherwise.
