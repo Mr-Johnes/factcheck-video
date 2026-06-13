@@ -30,18 +30,18 @@ The system combines local AI models, NLP pipelines, video processing tools, and 
 FactCheckVideo consists of three major components:
 
 
+<pre>
 factcheck-video/
-
-factcheck-video/
-├── frontend/        → React frontend application
-├── backend/         → Node.js backend server
-├── python/          → Python NLP microservice
-    ├── nlp_service.py
-    ├── requirements.txt
-    └── .env.example
+├── frontend/
+│   └── React frontend application
+├── backend/
+│   └── Node.js backend server
+├── python/
+│   ├── nlp_service.py
+│   ├── requirements.txt
+│   └── .env.example
 └── README.md
-
----
+</pre>
 
 # Prerequisites
 
